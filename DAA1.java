@@ -28,9 +28,13 @@ public class DAA1 extends MyTree {
 
     // 2. printDescending() [10 points]
     public static void printDescending(MyTree t) {
-    	// Write your codes in here
-        //...
-        // Write your codes in here
+    	if (t.getEmpty()) {
+            return;
+        }
+
+        printDescending(t.getRight());
+        System.out.println(t.getValue());
+        printDescending(t.getLeft());
     }
 
     // 3. max() [10 points]   
