@@ -17,7 +17,8 @@ public class DAA1 extends MyTree {
 					 int lowerBound, int upperBound) {
     	// Write your codes in here
         //...
-        // Write your codes in here    }
+        // Write your codes in here    
+	}
 
     // 2. printDescending() [10 points]
     public static void printDescending(MyTree t) {
