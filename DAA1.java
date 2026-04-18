@@ -50,9 +50,15 @@ public class DAA1 extends MyTree {
      * @return the max value of tree t
      */
     public static int max(MyTree t) {
-    	// Write your codes in here
-        //...
-        // Write your codes in here
+    	if (t.getEmpty()) {
+            throw new IllegalStateException("Trying to get max of an empty tree");
+        }
+
+        if (t.getRight().getEmpty()) {
+            return t.getValue();
+        }
+
+        return max(t.getRight());
     }
 
 }
