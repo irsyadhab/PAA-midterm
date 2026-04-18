@@ -6,10 +6,31 @@ public class DAA2 extends DAA1 {
 
 	// 4. isHeightBalanced() [10 points]
 	public static boolean isHeightBalanced(MyTree t) {
-		// Write your codes in here
-        //...
-        // Write your codes in here
+		return balancedHeight(t) != -1;
 	}
+
+	private static int balancedHeight(MyTree t) {
+		if (t.getEmpty()) {
+			return 0;
+		}
+
+		int leftHeight = balancedHeight(t.getLeft());
+		if (leftHeight == -1) {
+			return -1;
+		}
+
+		int rightHeight = balancedHeight(t.getRight());
+		if (rightHeight == -1) {
+			return -1;
+		}
+
+		if (Math.abs(leftHeight - rightHeight) > 1) {
+			return -1;
+		}
+
+		return Math.max(leftHeight, rightHeight) + 1;
+	}
+	
 
 	// 5. insertHB() [10 points]
 	public static MyTree insertHB(int n, MyTree t) {
